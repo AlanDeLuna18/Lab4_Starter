@@ -7,7 +7,7 @@
  */
 function sumValues(num1, num2, add) 
 {
-    if (add && num1 === num2) 
+    if (add == true && Number.isInteger(num1) && Number.isInteger(num2)) 
     {
         let result = 0;
 
@@ -17,7 +17,7 @@ function sumValues(num1, num2, add)
     }
     else 
     {
-        return !add;
+        return false;
     }
 }
 
@@ -50,4 +50,12 @@ function discountPrices(prices, discount)
 
 module.exports = {sumValues, discountPrices};
 
-console.log(discountPrices([10, 20, 30], 0.1));
+/*console.log(sumValues(3, 2, true));
+console.log(sumValues(2, 4, false)); 
+console.log(sumValues('not a number', 5, true));
+console.log(discountPrices([10, 20, 30], 0.1)); 
+console.log(discountPrices([10, 20, 30], 0));
+console.log(discountPrices([], 0.1)); 
+console.log(discountPrices([10, 20, 30, 40], 1));
+console.log(discountPrices([], 'hello')); 
+console.log(discountPrices('i\'m not an array', 0.5)); */
