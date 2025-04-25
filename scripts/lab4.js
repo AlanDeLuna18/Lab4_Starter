@@ -7,7 +7,7 @@
  */
 function sumValues(num1, num2, add) 
 {
-    if (add) 
+    if (add && num1 === num2) 
     {
         let result = 0;
 
@@ -29,15 +29,25 @@ function sumValues(num1, num2, add)
  */
 function discountPrices(prices, discount) 
 {
-    let discounted = []
-    let length = prices.length;
-    let discountedPrice = 0
-    for(let i = 0; i < length; i++) {
-        discountedPrice += prices[i] * (1 - discount);
-        discounted.push(discountedPrice);
+    if(prices.length == 0 || Array.isArray(prices) == false)
+    {
+        return false; 
     }
+    else
+    {
+        let discounted = []
+        let length = prices.length;
+        var discountedPrice = 0
+        for(let i = 0; i < length; i++) {
+            discountedPrice = prices[i] * (1 - discount);
+            discounted.push(discountedPrice);
+        }
 
-    return discounted;
+        return discounted;
+    }
+    
 }
 
 module.exports = {sumValues, discountPrices};
+
+console.log(discountPrices([10, 20, 30], 0.1));

@@ -36,6 +36,3 @@ describe('Testing discountPrices...', () => {
         expect(discountPrices('i\'m not an array', 0.5)).toEqual(false)
     });
 });
-
-
-
